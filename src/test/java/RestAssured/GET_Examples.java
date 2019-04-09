@@ -35,6 +35,7 @@ public class GET_Examples extends Core {
     @Test
     public void GET_200_getResponse() {
         Response response = given()
+                .when()
                 .get("http://s7.addthis.com/l10n/client.ru.min.json")
                 .then()
                 .extract()
@@ -47,12 +48,14 @@ public class GET_Examples extends Core {
     @Test
     public void GET_200_getResponseAsString() {
         Response response = given()
+                .when()
                 .get("http://s7.addthis.com/l10n/client.ru.min.json")
                 .then()
                 .extract()
                 .response();
 
         String stringResponse = given()
+                .when()
                 .get("http://s7.addthis.com/l10n/client.ru.min.json")
                 .then()
                 .extract()
@@ -65,6 +68,7 @@ public class GET_Examples extends Core {
     @Test
     public void GET_200_getResponseAsObject() {
         ResponseObject responseObject1 = given()
+                .when()
                 .get("https://onesignal.com/api/v1/apps/1bd385ce-bf6b-4d83-be90-84da0bb1de2e/icon")
                 .then()
                 .extract()
@@ -72,6 +76,7 @@ public class GET_Examples extends Core {
                 .as(ResponseObject.class);
 
         ResponseObject responseObject2 = given()
+                .when()
                 .get("https://onesignal.com/api/v1/apps/1bd385ce-bf6b-4d83-be90-84da0bb1de2e/icon")
                 .then()
                 .extract()
@@ -86,6 +91,7 @@ public class GET_Examples extends Core {
     @Test
     public void GET_200_getResponseAsJSON() {
         String response = given()
+                .when()
                 .get("http://s7.addthis.com/l10n/client.ru.min.json")
                 .then()
                 .extract()
@@ -115,6 +121,7 @@ public class GET_Examples extends Core {
     @Test
     public void GET_200_checkTheResponseCode() {
         given()
+                .when()
                 .get("http://s7.addthis.com/l10n/client.ru.min.json")
                 .then()
                 .statusCode(200);
@@ -123,6 +130,7 @@ public class GET_Examples extends Core {
     @Test
     public void GET_200_checkInBody() {
         given()
+                .when()
                 .get("http://s7.addthis.com/l10n/client.ru.min.json")
                 .then()
                 .statusCode(200)
@@ -133,6 +141,7 @@ public class GET_Examples extends Core {
     @Test
     public void GET_200_checkResponseContainsString() {
         Response response = given()
+                .when()
                 .get("http://s7.addthis.com/l10n/client.ru.min.json")
                 .then()
                 .statusCode(200)
@@ -147,6 +156,7 @@ public class GET_Examples extends Core {
     public void GET_400_checkResponseMatches() {
 
         Response response = given()
+                .when()
                 .get("https://onesignal.com/api/v1/apps/icon")
                 .then()
                 .statusCode(400)
